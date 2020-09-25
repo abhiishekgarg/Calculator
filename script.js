@@ -1,6 +1,6 @@
 var buttons = document.getElementsByClassName("button");
 var display = document.getElementById("display");
-var operands = [0, 1, 2, 3, 4, 5, 6, 8, 9];
+var operands = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var operand1 = 0;
 var operand2 = 0;
 var operator = null;
