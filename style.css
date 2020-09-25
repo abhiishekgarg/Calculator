@@ -27,6 +27,7 @@
     flex-direction: row-reverse;
     align-items: center;
     font-size: 30px;
+    overflow: hidden;
 }
 
 .button
