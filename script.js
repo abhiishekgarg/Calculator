@@ -1,5 +1,6 @@
 var buttons = document.getElementsByClassName("button");
 var display = document.getElementById("display");
+var operands = [0, 1, 2, 3, 4, 5, 6, 8, 9];
 var operand1 = 0;
 var operand2 = 0;
 var operator = null;
@@ -86,6 +87,9 @@ document.addEventListener("keydown", function(event)
             case 'AC':
                 display.innerText = "";
                 break;
+            case 'Escape':
+                display.innerText = "";
+                break;
             case '+/-':
                 operand1 = parseFloat(display.textContent);
                 operand1 *= -1;
@@ -128,6 +132,7 @@ document.addEventListener("keydown", function(event)
                 if(flag == false) display.innerText += ".";
                 else break;
                 break;
+            case 'Enter':
             case '=':
                 operand2 = parseFloat(display.textContent);
                 if(operator == '%')
@@ -139,11 +144,16 @@ document.addEventListener("keydown", function(event)
                 display.innerText = result;
                 break;
             default:
-                if(display.innerText[0] == operator)
+                for(var i=0; i<operands.length; i++)
                 {
-                    display.innerText = "";
-                    
+                    if(value == operands[i])
+                    {
+                        if(display.innerText[0] == operator)
+                    {
+                        display.innerText = "";
+                    }
+                    display.innerText += value;
+                    }
                 }
-                display.innerText += value; 
         }
 });
